@@ -9,22 +9,22 @@ test data.
 
 ## b. Dataset description
 
-The supplied WeatherAUS workbook contains 145,460 observations from 49 Australian
+The supplied WeatherAUS CSV contains 145,460 observations from 49 Australian
 weather stations, 22 predictor columns, and the `RainTomorrow` target. After rows
 without a target are removed, 142,193 labeled observations remain. The predictors
 include numeric weather measurements and categorical station, wind, and rainfall
 fields. Missing input values are imputed inside each fitted pipeline. `Date` is
 converted to year, month, and day features. The target classes are `No` and `Yes`.
 
-The workbook is retained at `data/weatherAUS.csv.xlsx` for reproducibility. The
-training script reserves a stratified holdout and uses a stratified sample of up to
+The source CSV is retained at `data/weatherAUS.csv` for reproducibility. The training
+script reserves a stratified holdout and uses a stratified sample of up to
 20,000 training rows and 5,000 test rows to keep all five models practical to train.
 The resulting `test_data.csv` is the labeled sample used by the app and must include
 all source predictor columns plus `RainTomorrow`.
 
 ## c. GitHub Repository Link
 
-**Repository:** _Add the GitHub URL after publishing this local repository._
+**Repository:** https://github.com/Bharat19111986/WeatherAUS_Assignment_2
 
 ## d. Models used
 
@@ -59,7 +59,7 @@ can be used to calculate AUC.
 WeatherAUS_Assignment_2/
 ├── app.py
 ├── data/
-│   └── weatherAUS.csv.xlsx
+│   └── weatherAUS.csv
 ├── models/
 │   ├── *.joblib
 │   ├── metadata.json
@@ -82,4 +82,3 @@ The test CSV must contain every source predictor column and `RainTomorrow`. The 
 shows Accuracy, AUC, Precision, Recall, F1, and MCC for all five saved models on
 the same uploaded test CSV, plus a confusion matrix and classification report for
 the selected model.
-

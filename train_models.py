@@ -31,7 +31,7 @@ from weather_ml import TARGET_COLUMN, build_features
 
 
 ROOT = Path(__file__).resolve().parent
-SOURCE_FILE = ROOT / "data" / "weatherAUS.csv.xlsx"
+SOURCE_FILE = ROOT / "data" / "weatherAUS.csv"
 MODEL_DIR = ROOT / "models"
 TEST_FILE = ROOT / "test_data.csv"
 METRICS_FILE = ROOT / "models" / "metrics.json"
@@ -107,9 +107,9 @@ def make_models() -> dict[str, object]:
 
 def main() -> None:
     if not SOURCE_FILE.exists():
-        raise FileNotFoundError(f"Dataset workbook not found: {SOURCE_FILE}")
+        raise FileNotFoundError(f"Dataset CSV not found: {SOURCE_FILE}")
 
-    source = pd.read_excel(SOURCE_FILE)
+    source = pd.read_csv(SOURCE_FILE)
     if TARGET_COLUMN not in source.columns:
         raise ValueError(f"Dataset must include the {TARGET_COLUMN!r} target column.")
 
