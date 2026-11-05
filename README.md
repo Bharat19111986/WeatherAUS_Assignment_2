@@ -83,9 +83,3 @@ shows Accuracy, AUC, Precision, Recall, F1, and MCC for all five saved models on
 the same uploaded test CSV, plus a confusion matrix and classification report for
 the selected model.
 
-## Deployment and submission
-
-Push this repository to GitHub, then deploy `app.py` from Streamlit Community Cloud.
-Include the published repository URL, deployed app URL, a BITS Virtual Lab execution
-screenshot, and this README in the submitted PDF. The GitHub and app links and lab
-screenshot must be added after those external steps are completed.
